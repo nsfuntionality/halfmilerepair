@@ -1,0 +1,7 @@
+:root, [data-bs-theme=light] {
+  --bs-body-font-family: Montserrat, sans-serif;
+  --bs-body-font-size: 92;
+  --bs-body-font-weight: 400;
+  --bs-focus-ring-opacity: 0.3;
+}
+
