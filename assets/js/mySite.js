@@ -20,19 +20,22 @@
   function initializeCarousel(photoUrls) {
     const owlCarousel = $('#myCarousel');
     
+    // Fixed height for all photos
+    const fixedHeight = 800; // Set your desired fixed height in pixels
+    
     // Append images to the carousel container
     photoUrls.forEach(photoUrl => {
-      owlCarousel.append(`<div class="item"><img src="${photoUrl}" alt="Flickr Photo"></div>`);
+      owlCarousel.append(`<div class="item"><img src="${photoUrl}" alt="Flickr Photo" style="height: ${fixedHeight}px; width: auto;"></div>`);
     });
 
     // Initialize Owl Carousel
     owlCarousel.owlCarousel({
-        items:1,
-        loop:true,
-        margin:10,
-        autoplay:true,
-        autoplayTimeout:3000,
-        autoplayHoverPause:false
+    items:2,
+    loop:true,
+    margin:1,
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:false
     });
   }
 
@@ -40,7 +43,7 @@
   const photosetId = '72177720313521573'; // Replace with your actual photoset ID
   fetchPhotoset(photosetId)
     .then(photoData => {
-      const photoUrls = photoData.map(photo => `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`);
+      const photoUrls = photoData.map(photo => `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_c.jpg`);
       initializeCarousel(photoUrls);
     })
     .catch(error => console.error('Error:', error));
