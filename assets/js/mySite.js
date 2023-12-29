@@ -25,17 +25,19 @@
     
     // Append images to the carousel container
     photoUrls.forEach(photoUrl => {
-      owlCarousel.append(`<div class="item"><img src="${photoUrl}" alt="Flickr Photo" style="height: ${fixedHeight}px; width: auto;"></div>`);
+      owlCarousel.append(`<div class="item"><img src="${photoUrl}" alt="Flickr Photo" style="xheight: ${fixedHeight}px; xwidth: auto;"></div>`);
     });
 
     // Initialize Owl Carousel
     owlCarousel.owlCarousel({
     items:2,
     loop:true,
-    margin:1,
+    margin:10,
     autoplay:true,
     autoplayTimeout:3000,
-    autoplayHoverPause:false
+    autoplayHoverPause:false,
+    autoWidth:true,
+    autoHeight:true,
     });
   }
 
